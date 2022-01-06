@@ -1,0 +1,63 @@
+using System;
+using System.Threading;
+
+class Program {
+    static void Main(string[] args) {
+
+      string[] possAnswer = {"rock", "paper", "scissors"};
+  
+      
+        Console.WriteLine("Welcome to Rock, Paper, Scissors!");
+        Console.WriteLine("Rock, Paper, Scissors...");
+        Thread.Sleep(200);
+        Console.WriteLine("Shoot! What did you put?");
+        string userAns = Console.ReadLine();
+        Random rnd = new Random();
+        string compAnswer = possAnswer[rnd.Next(0,possAnswer.Length)];
+          if (compAnswer == possAnswer[0]){
+          Console.WriteLine("I put rock.");
+          Thread.Sleep(500);
+          if (userAns == "paper"){
+            Console.WriteLine("You beat me!");
+          }
+          else if (userAns == "scissors"){
+            Console.WriteLine("I beat you!");
+          }
+          else {
+            Console.WriteLine("We tied!");
+          }
+        }
+
+      else if (compAnswer == possAnswer[1]){
+        Console.WriteLine("I put paper.");
+        Thread.Sleep(500);
+        if (userAns == "scissors"){
+          Console.WriteLine("You beat me!");
+        }
+        else if (userAns == "rock"){
+          Console.WriteLine("I beat you!");
+        }
+        else {
+          Console.WriteLine("We tied!");
+        }
+      }
+
+      else{
+        Console.WriteLine("I put scissors.");
+        Thread.Sleep(500);
+        if (userAns == "rock"){
+          Console.WriteLine("You beat me!");
+        }
+
+        else if (userAns == "paper"){
+          Console.WriteLine("I beat you!");
+        }
+
+        else {
+          Console.WriteLine("We tied!");
+        }
+      }
+        
+        
+      }
+}
